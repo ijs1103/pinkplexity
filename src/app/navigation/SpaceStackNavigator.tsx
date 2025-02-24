@@ -22,7 +22,10 @@ export const useSpaceStackRoute = <
 
 export const SpaceStackNavigator = () => {
   return (
-    <SpaceStack.Navigator>
+    <SpaceStack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}>
       <SpaceStack.Screen
         name="BookMarkListScreen"
         component={BookMarkListScreen}

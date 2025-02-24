@@ -14,7 +14,8 @@ type LibraryStackParams = {
 
 export const useLibraryStackNavigation = <
   RouteName extends keyof LibraryStackParams,
->() => useNavigation<NativeStackNavigationProp<LibraryStackParams, RouteName>>();
+>() =>
+  useNavigation<NativeStackNavigationProp<LibraryStackParams, RouteName>>();
 
 export const useLibraryStackRoute = <
   RouteName extends keyof LibraryStackParams,
@@ -22,7 +23,10 @@ export const useLibraryStackRoute = <
 
 export const LibraryStackNavigator = () => {
   return (
-    <LibraryStack.Navigator>
+    <LibraryStack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}>
       <LibraryStack.Screen
         name="LibraryListScreen"
         component={LibraryListScreen}

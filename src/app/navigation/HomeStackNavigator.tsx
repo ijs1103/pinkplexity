@@ -1,5 +1,8 @@
-import { RouteProp, useNavigation, useRoute } from '@react-navigation/native';
-import {createNativeStackNavigator, NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {RouteProp, useNavigation, useRoute} from '@react-navigation/native';
+import {
+  createNativeStackNavigator,
+  NativeStackNavigationProp,
+} from '@react-navigation/native-stack';
 import {Text, View} from 'react-native';
 
 const HomeStack = createNativeStackNavigator();
@@ -19,7 +22,10 @@ export const useHomeStackRoute = <RouteName extends keyof HomeStackParams>() =>
 
 export const HomeStackNavigator = () => {
   return (
-    <HomeStack.Navigator>
+    <HomeStack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}>
       <HomeStack.Screen name="HomeScreen" component={HomeScreen} />
       <HomeStack.Screen name="SettingsScreen" component={SettingsScreen} />
       <HomeStack.Screen name="LoginScreen" component={LoginScreen} />
